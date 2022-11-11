@@ -2,6 +2,8 @@
 
 ![logo](./docs/identityPass.png)
 
+[![npm version](https://badge.fury.io/js/@oneacrefund%2Fn8n-nodes-identitypass.svg)](https://badge.fury.io/js/@oneacrefund%2Fn8n-nodes-identitypass)
+
 This is an n8n community node to interact with the [IdentityPass](https://myidentitypass.com/) data verification service.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
