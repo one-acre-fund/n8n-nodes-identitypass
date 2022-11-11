@@ -146,7 +146,7 @@ export class IdentityPass implements INodeType {
 
 			{
 				displayName: 'ID Number to Validate',
-				name: 'number',
+				name: 'docNumber',
 				type: 'string',
 				default: '',
 				required: true,
@@ -176,16 +176,18 @@ export class IdentityPass implements INodeType {
 			if (resource === 'data') {
 				if (type === 'nationalId') {
 					if (country === 'KE') {
+						// tslint:disable-next-line: variable-name
 						const customer_reference = this.getNodeParameter('customer_reference', i) as string;
+						// tslint:disable-next-line: variable-name
 						const customer_name = this.getNodeParameter('customer_name', i) as string;
-						const number = this.getNodeParameter('number', i) as string;
+						const docNumber = this.getNodeParameter('docNumber', i) as string;
 
 						responseData = await identityPassApiRequest.call(this, {
 							method: 'POST',
 							url: '/api/v2/biometrics/merchant/data/verification/ke/national_id/new',
 							body: {
 								customer_name,
-								number,
+								number: docNumber,
 								customer_reference,
 							},
 						});
